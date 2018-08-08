@@ -19,6 +19,7 @@
         <hr>        
         <table class="table table-dark">
             <thead>
+            <th>Model</th>
             <th>No</th>
             <th>Product Code</th>
             <th>Product Name</th>
@@ -28,6 +29,7 @@
             </thead>
             <c:forEach items="${products}" var="p" varStatus="vs" >
                 <tr>
+                    <td><img src="model-images/model-images/${p.productCode}.jpg" width="120"></td>
                     <td>${vs.count}</td>
                     <td>${p.productCode}</td>
                     <td>${p.productName}</td>
