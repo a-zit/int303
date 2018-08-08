@@ -16,7 +16,7 @@ public class SimpleCalculator {
 
     @Override
     public String toString() {
-    return String.format("x = %d, y = %d, Operator = %s, %d %s %d = %.2f",
+    return String.format("x = %d, y = %d, Operator = %s, %d %s %d = %.2f,",
                         x, y, operator, x, operator, y, getResult());
     }
 

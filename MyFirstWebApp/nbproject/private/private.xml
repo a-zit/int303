@@ -3,8 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/src/java/sit/int303/first/model/PrimeNumber.java</file>
             <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/src/java/sit/int303/first/SimpleCalculatorServlet.java</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/src/java/sit/int303/first/PrimeNumberServlet.java</file>
             <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/index.html</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/SimpleCalculatorView.jsp</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/PrimeNumberView.jsp</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/CalculatorForm.html</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/test/sit/int303/first/model/TestPrime.java</file>
         </group>
     </open-files>
 </project-private>

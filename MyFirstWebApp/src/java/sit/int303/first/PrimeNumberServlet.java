@@ -11,13 +11,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import sit.int303.first.model.SimpleCalculator;
+import sit.int303.first.model.PrimeNumber;
 
 /**
  *
  * @author INT303
  */
-public class VerySimpleCalculatorServlet extends HttpServlet {
+public class PrimeNumberServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,55 +30,14 @@ public class VerySimpleCalculatorServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            String n = request.getParameter("number");
             
-                String xStr = request.getParameter("x");
-                String yStr = request.getParameter("y");
-                String oStr = request.getParameter("Operator");
-                if (" ".equals(oStr)) {
-                    oStr = "+";
-                }
-                int x = Integer.valueOf(xStr);
-                int y = Integer.valueOf(yStr);
-                SimpleCalculator sc = new SimpleCalculator();
-                sc.setX(x);
-                sc.setY(y);
-                sc.setOperator(oStr);
-                
-                request.setAttribute("calculator", sc);
-                getServletContext().getRequestDispatcher("/SimpleCalculatorView.jsp").forward(request, response);
-
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Servlet VerySimpleCalculatorServlet</title>");
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1 style='color:red'>");
-                out.println(sc.toString());
-                out.println("</h1>");
-                out.println("</body>");
-                out.println("</html>");
-            
-//                double result = 0;
-//
-//                if (oStr.equals("+")|| oStr.equals(" ")) {
-//                    oStr = "+";
-//                    result = x + y;
-//                }else if(oStr.equals("-")){
-//                    result = x-y;
-//                }
-//                else if (oStr.equals("/")) {
-//                    double newX = (double)x;
-//                    double newY = (double)y;
-//                    result = newX / newY;
-//                } else if (oStr.equals("*")) {
-//                    result = x * y;
-//                }
-
-        }
+            if(n != null){
+            int number = Integer.valueOf(n);
+            PrimeNumber pn = new PrimeNumber(number);
+            request.setAttribute("pn", pn);
+            }
+            getServletContext().getRequestDispatcher("/PrimeNumberView.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
