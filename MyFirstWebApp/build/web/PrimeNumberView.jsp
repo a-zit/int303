@@ -14,7 +14,7 @@
     </head>
     <body class="m-5">
         <div>
-        <h1>Prime Number Application ::</h1>
+        <h1>Prime Number Application :: ${pn}</h1>
         <hr>
         <div class="row">
         <form  class="col-8 form-group" action="PrimeNumber" method="post">

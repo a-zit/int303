@@ -59,14 +59,19 @@ public final class ProductList_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css\">\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>JSP Page</title>\n");
+      out.write("        <script src=\"https://code.jquery.com/jquery-3.3.1.js\"></script>\n");
+      out.write("        <script src=\"https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js\"></script>\n");
+      out.write("        <script src=\"https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js\"></script>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <div class=\"m-5\">\n");
+      out.write(" \n");
+      out.write("        <div class=\"container\">\n");
       out.write("        <h1>Product List :: </h1>\n");
       out.write("        <hr>        \n");
-      out.write("        <table class=\"table table-dark\">\n");
+      out.write("        <table id=\"example\" class=\"table table-dark\">\n");
       out.write("            <thead>\n");
       out.write("            <th>Model</th>\n");
       out.write("            <th>No</th>\n");
@@ -83,6 +88,12 @@ public final class ProductList_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </table>\n");
       out.write("        <a href=\"index.html\"><button type=\"button\" class=\"mt-2 btn btn-link\">Back</button></a>\n");
       out.write("        </div>\n");
+      out.write("        <script>\n");
+      out.write("            $(document).ready(function() {\n");
+      out.write("            $('#example').DataTable();\n");
+      out.write("            } );\n");
+      out.write("        </script>\n");
+      out.write("     \n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
@@ -116,7 +127,7 @@ public final class ProductList_jsp extends org.apache.jasper.runtime.HttpJspBase
         do {
           out.write("\n");
           out.write("                <tr>\n");
-          out.write("                    <td><img src=\"model-images/");
+          out.write("                    <td><img src=\"model-images/model-images/");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${p.productCode}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write(".jpg\" width=\"120\"></td>\n");
           out.write("                    <td>");

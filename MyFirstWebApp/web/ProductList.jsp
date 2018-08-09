@@ -9,15 +9,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     </head>
     <body>
-        <div class="m-5">
-        <h1>Product List :: </h1>
-        <hr>        
-        <table class="table table-dark">
+        <div class="container">
+        <h1>Product List :: </h1><hr>        
+        <table id="example" class="table table-dark">
             <thead>
             <th>Model</th>
             <th>No</th>
@@ -41,5 +44,11 @@
         </table>
         <a href="index.html"><button type="button" class="mt-2 btn btn-link">Back</button></a>
         </div>
+        <script>
+            $(document).ready(function() {
+            $('#example').DataTable();
+            } );
+        </script>
+     
     </body>
 </html>

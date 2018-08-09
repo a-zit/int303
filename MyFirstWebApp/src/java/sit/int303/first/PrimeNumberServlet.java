@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import sit.int303.first.model.PrimeNumber;
 
 /**
@@ -30,12 +31,18 @@ public class PrimeNumberServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+            HttpSession session = request.getSession(true);
             String n = request.getParameter("number");
             
             if(n != null){
             int number = Integer.valueOf(n);
-            PrimeNumber pn = new PrimeNumber(number);
-            request.setAttribute("pn", pn);
+            PrimeNumber pn = (PrimeNumber)session.getAttribute("pn");
+            if(pn == null){
+                pn = new PrimeNumber(number);
+                session.setAttribute("pn", pn);
+            }
+                pn.setNumber(number);
+//            request.setAttribute("pn", pn);
             }
             getServletContext().getRequestDispatcher("/PrimeNumberView.jsp").forward(request, response);
     }
