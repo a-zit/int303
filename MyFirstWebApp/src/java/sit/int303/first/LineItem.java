@@ -11,7 +11,7 @@ import sit.int303.mockup.model.Product;
  *
  * @author INT303
  */
-class LineItem {
+public class LineItem {
     Product product;
     double salePrices;
     int quantity;
@@ -56,5 +56,7 @@ class LineItem {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    
     
 }

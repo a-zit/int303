@@ -4,14 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/src/java/sit/int303/first/ProductListServlet.java</file>
-            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/ProductList.jsp</file>
-            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/model-images/model-images/S10_2016.jpg</file>
-            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/SimpleCalculatorView.jsp</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/src/java/sit/int303/first/ShoppingCart.java</file>
             <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/index.html</file>
-            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/model-images/model-images/S12_1108.jpg</file>
-            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/PrimeNumberView.jsp</file>
-            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/ViewParameter.jsp</file>
-            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/model-images/model-images/S10_1949.jpg</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/CalculatorForm.html</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/src/java/sit/int303/first/RemoveLineItemServlet.java</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/ShowCart.jsp</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/ProductList.jsp</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/src/java/sit/int303/first/PrimeNumberServlet.java</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/web/SimpleCalculatorView.jsp</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/src/java/sit/int303/first/ShowCartServlet.java</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/src/java/sit/int303/first/test/TestShoppingCart.java</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/src/java/sit/int303/first/AddItemToCartServlet.java</file>
+            <file>file:/C:/Users/INT303/Documents/NetBeansProjects/MyFirstWebApp/src/java/sit/int303/first/LineItem.java</file>
         </group>
     </open-files>
 </project-private>

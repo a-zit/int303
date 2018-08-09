@@ -16,6 +16,22 @@
         <servlet-name>ProductListServlet</servlet-name>
         <servlet-class>sit.int303.first.ProductListServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddItemToCartServlet</servlet-name>
+        <servlet-class>sit.int303.first.AddItemToCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowCartServlet</servlet-name>
+        <servlet-class>sit.int303.first.ShowCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveItemServlet</servlet-name>
+        <servlet-class>RemoveItemServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveLineItemServlet</servlet-name>
+        <servlet-class>sit.int303.first.RemoveLineItemServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SimpleCalculatorServlet</servlet-name>
         <url-pattern>/SimpleCal</url-pattern>
@@ -31,6 +47,22 @@
     <servlet-mapping>
         <servlet-name>ProductListServlet</servlet-name>
         <url-pattern>/ProductList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddItemToCartServlet</servlet-name>
+        <url-pattern>/AddItemToCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowCartServlet</servlet-name>
+        <url-pattern>/ShowCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveItemServlet</servlet-name>
+        <url-pattern>/RemoveItem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveLineItemServlet</servlet-name>
+        <url-pattern>/RemoveLineItem</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

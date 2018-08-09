@@ -19,7 +19,14 @@
     </head>
     <body>
         <div class="container">
-        <h1>Product List :: </h1><hr>        
+            <table class="table table-dark">
+                <tr>
+                    <td><h1>Product List :: </h1></td>
+                    <td>
+                        <a href="ShowCart.jsp">Your Cart:${cart.totalQuantity}</a>
+                    </td>
+                </tr>
+            </table>
         <table id="example" class="table table-dark">
             <thead>
             <th>Model</th>
@@ -29,6 +36,7 @@
             <th>Product Line</th>
             <th>Scale</th>
             <th>Price</th>
+            <th>Add To Cart</th>
             </thead>
             <c:forEach items="${products}" var="p" varStatus="vs" >
                 <tr>
@@ -39,6 +47,12 @@
                     <td>${p.productLine}</td>
                     <td>${p.productScale}</td>
                     <td>${p.msrp}</td>
+                    <td>
+                        <form action="AddItemToCart" method="post">
+                            <input type="hidden" value="${p.productCode}" name="productCode"/>
+                            <input type="submit" class="btn-success" value="Add To Cart"/>
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
         </table>
