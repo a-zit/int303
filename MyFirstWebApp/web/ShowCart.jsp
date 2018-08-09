@@ -23,6 +23,12 @@
             <table class="table table-dark">
                 <tr>
                     <td><h1>Product Cart :: </h1></td>
+                    <td>
+                        Your Cart: ${cart.totalQuantity}
+                    </td>
+                    <td>
+                        Total Price: ${cart.totalPrice} Baht
+                    </td>
                 </tr>
             </table>
         <table id="example" class="table table-dark">
