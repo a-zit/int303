@@ -19,14 +19,7 @@
     </head>
     <body>
         <div class="container">
-            <table class="table table-dark">
-                <tr>
-                    <td><h1>Product List :: </h1></td>
-                    <td>
-                        <a href="ShowCart.jsp">Your Cart:${cart.totalQuantity}</a>
-                    </td>
-                </tr>
-            </table>
+        <jsp:include page="include/Header.jsp?title=Product Listing::"/>
         <table id="example" class="table table-dark">
             <thead>
             <th>Model</th>

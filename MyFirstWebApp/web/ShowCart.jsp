@@ -31,8 +31,9 @@
                     </td>
                 </tr>
             </table>
-        <table id="example" class="table table-dark">
+        <table id="example" class="table">
             <thead>
+            <th>No</th>
             <th>Model</th>
             <th>Quantity</th>
             <th>Product Code</th>
@@ -42,9 +43,14 @@
             <th>Price</th>
             <th>Remove item</th>
             </thead>
+            <c:set var="item" value="${sessionScope.cart.lineItems}"/>
+            <c:set var="bgColorX" value="lightgray"/>
+            <c:set var="bgColorY" value="white"/>
+            
             <c:forEach items="${cart.lineItems}" var="lineItem" varStatus="vs" >
-                <tr>
-                    <td><img src="model-images/model-images/${lineItem.product.productCode}.jpg" width="120"></td>
+                <tr style="background-color: ${vs.count%2==1?bgColorX:bgColorY}">
+                    <td>${vs.count}</td>
+                    <td><img src="model-images/model-images/${lineItem.product.productCode}.jpg" width="120"/></td>    
                     <td>${lineItem.quantity}</td>
                     <td>${lineItem.product.productCode}</td>
                     <td>${lineItem.product.productName}</td>
@@ -52,7 +58,7 @@
                     <td>${lineItem.product.productScale}</td>
                     <td>${lineItem.product.msrp}</td>
                     <td>
-                        <form action="RemoveItemToCart" method="post">
+                        <form action="RemoveItemFromCart" method="post">
                             <input type="hidden" value="${lineItem.product.productCode}" name="productCode"/>
                             <input type="submit" class="btn-danger" value="Remove item"/>
                         </form>

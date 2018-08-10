@@ -7,7 +7,6 @@ package sit.int303.first;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +19,7 @@ import sit.int303.mockup.model.ProductMockup;
  *
  * @author INT303
  */
-public class ShowCartServlet extends HttpServlet {
+public class RemoveItemFromCartServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,22 +32,19 @@ public class ShowCartServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-            HttpSession session = request.getSession(false);
-            if(session != null){
-                ShoppingCart cart = (ShoppingCart)session.getAttribute("cart");
-                System.out.println("Session is null");
-                if(cart != null){
-                    System.out.println("Cart is null");
-                    getServletContext().getRequestDispatcher("/ShowCart.jsp").forward(request, response);
-                    return;
-                }
-            }
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST,"Session Timeout .. Try Again");
-//            getServletContext().getRequestDispatcher("/ErrorInfo.html").forward(request, response);
-            //response.sendRedirect("ProductList");
-
+        response.setContentType("text/html;charset=UTF-8");
         
+        HttpSession session = request.getSession(true);
+            ShoppingCart cart = (ShoppingCart)session.getAttribute("cart");
+            if(cart == null){
+                cart = new ShoppingCart();
+                session.setAttribute("cart", cart);
+            }
+            String productCode = request.getParameter("productCode");
+            Product p = ProductMockup.getProduct(productCode);
+            cart.remove(p);
+//            getServletContext().getRequestDispatcher("/ProductList").forward(request, response);
+            response.sendRedirect("ShowCart.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
