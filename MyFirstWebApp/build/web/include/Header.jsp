@@ -39,3 +39,5 @@
             </tr>
         </table>
         <hr>
+        Session Id: ${cookie.JSESSIONID.value}
+        <hr>

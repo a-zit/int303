@@ -40,6 +40,10 @@
         <servlet-name>CalculatorServlet</servlet-name>
         <servlet-class>sit.int303.first.CalculatorServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ChooseBackgroundServlet</servlet-name>
+        <servlet-class>sit.int303.first.model.ChooseBackgroundServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SimpleCalculatorServlet</servlet-name>
         <url-pattern>/SimpleCal</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>CalculatorServlet</servlet-name>
         <url-pattern>/Calculator</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChooseBackgroundServlet</servlet-name>
+        <url-pattern>/ChooseBackground</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

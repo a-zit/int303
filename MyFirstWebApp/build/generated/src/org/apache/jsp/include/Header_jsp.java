@@ -77,7 +77,7 @@ public final class Header_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <table class=\"table\">\n");
       out.write("            <tr>\n");
       out.write("                <td>\n");
-      out.write("                    <a href=\"index.html\" title=\"Back to Home\" src=\"unnamed.jpg\"></a>\n");
+      out.write("                    <a href=\"index.html\" title=\"Back to Home\"><img src=\"unnamed.jpg\" width=\"120\"></a>\n");
       out.write("                </td>\n");
       out.write("                <td><h1>");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -96,6 +96,10 @@ public final class Header_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </tr>\n");
       out.write("        </table>\n");
       out.write("        <hr>\n");
+      out.write("        Session Id: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cookie.JSESSIONID.value}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
+      out.write("        <hr>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
