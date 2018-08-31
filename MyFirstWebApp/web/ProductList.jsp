@@ -35,7 +35,7 @@
                 <tr>
                     <td><img src="model-images/model-images/${p.productCode}.jpg" width="120"></td>
                     <td>${vs.count}</td>
-                    <td>${p.productCode}</td>
+                    <td><a href="GetProduct?productCode=${p.productCode}">${p.productCode}</a></td>
                     <td>${p.productName}</td>
                     <td>${p.productLine}</td>
                     <td>${p.productScale}</td>
@@ -45,6 +45,7 @@
                             <input type="hidden" value="${p.productCode}" name="productCode"/>
                             <input type="submit" class="btn-success" value="Add To Cart"/>
                         </form>
+                            <a href="AddItemToCart?productCode=${p.productCode}"><input type="button" value="Add to Cart"></a>
                     </td>
                 </tr>
             </c:forEach>
