@@ -33,19 +33,19 @@
             </thead>
             <c:forEach items="${products}" var="p" varStatus="vs" >
                 <tr>
-                    <td><img src="model-images/model-images/${p.productCode}.jpg" width="120"></td>
+                    <td><img src="model-images/model-images/${p.productcode}.jpg" width="120"></td>
                     <td>${vs.count}</td>
-                    <td><a href="GetProduct?productCode=${p.productCode}">${p.productCode}</a></td>
-                    <td>${p.productName}</td>
-                    <td>${p.productLine}</td>
-                    <td>${p.productScale}</td>
+                    <td><a href="GetProduct?productCode=${p.productcode}">${p.productcode}</a></td>
+                    <td>${p.productname}</td>
+                    <td>${p.productline}</td>
+                    <td>${p.productscale}</td>
                     <td>${p.msrp}</td>
                     <td>
                         <form action="AddItemToCart" method="post">
-                            <input type="hidden" value="${p.productCode}" name="productCode"/>
+                            <input type="hidden" value="${p.productcode}" name="productCode"/>
                             <input type="submit" class="btn-success" value="Add To Cart"/>
                         </form>
-                            <a href="AddItemToCart?productCode=${p.productCode}"><input type="button" value="Add to Cart"></a>
+                            <a href="AddItemToCart?productCode=${p.productcode}"><input type="button" value="Add to Cart"></a>
                     </td>
                 </tr>
             </c:forEach>

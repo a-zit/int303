@@ -29,10 +29,10 @@
                         &nbsp;&nbsp;&nbsp;
                     <c:choose>
                         <c:when test="${sessionScope.user != null}">
-                            Hello ${sessionScope.user.name}
+                            Hello <a href="Logout">${sessionScope.user.contactfirstname}</a>
                         </c:when>
                         <c:otherwise>
-                            Hello Guest
+                            Hello <a href="Login">Guest</a>
                         </c:otherwise>
                     </c:choose>
                 </td>

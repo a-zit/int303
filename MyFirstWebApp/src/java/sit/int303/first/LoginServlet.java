@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sit.int303.first.model;
+package sit.int303.first;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,25 +11,23 @@ import javax.annotation.Resource;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.UserTransaction;
-import sit.int303.first.jpa.model.Product;
-import sit.int303.first.jpa.model.controller.ProductJpaController;
+import sit.int303.first.jpa.model.Customer;
+import sit.int303.first.jpa.model.controller.CustomerJpaController;
 
 /**
  *
  * @author INT303
  */
-
-public class GetProductServlet extends HttpServlet {
-    @PersistenceUnit(unitName = "MyFirstWebAppPU")
-    EntityManagerFactory emf;
-    
+public class LoginServlet extends HttpServlet {
     @Resource
     UserTransaction utx;
+    
+    @PersistenceUnit(unitName = "MyFirstWebAppPU")
+    EntityManagerFactory emf;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,24 +39,25 @@ public class GetProductServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-//        Object x = new String("ABD");
-//        ((String) x)
-        
-        response.setContentType("text/html;charset=UTF-8");
-        String productCode = request.getParameter("productCode");
-        if(productCode == null){
-            response.sendError(HttpServletResponse.SC_EXPECTATION_FAILED);
-        }else{
-            ProductJpaController productCtrl = new ProductJpaController(utx, emf);
-            Product product = productCtrl.findProduct(productCode);
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("password");
+        if(userName != null && userName.length() > 0
+                && password != null && password.length()>0){
+            CustomerJpaController customerJpaCtrl = new CustomerJpaController(utx, emf);
+            Customer c = customerJpaCtrl.findCustomer(Integer.valueOf(userName));
             
-            System.out.println("product code"+product.getProductcode());
-            System.out.println("product description"+product.getProductdescription());
-            
-            request.setAttribute("product",product);
-            getServletContext().getRequestDispatcher("/ViewProductDetail.jsp").forward(request, response);
+            if(c != null){
+                if(password.equals(c.getContactfirstname())){
+                    request.getSession().setAttribute("user", c);
+                    getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+                    return;
+                }
+            }
+            request.setAttribute("message", "Invalid user name or password !!!");
         }
+        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
